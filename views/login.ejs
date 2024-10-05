@@ -1,0 +1,140 @@
+<section class="px-5 md:px-32 py-36" id="option">
+  <div class="container">
+    <div
+      class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl border-2"
+    >
+      <div class="flex justify-center px-10 py-12">
+        <button
+          class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 md:w-96 w-20 py-4 rounded-xl text-white border-blue-500"
+          id="gds"
+        >
+          GDS
+        </button>
+      </div>
+      <div class="flex justify-center px-10 py-12">
+        <button
+          class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 md:w-96 w-20 py-4 rounded-xl text-white border-blue-500"
+          id="absen"
+        >
+          ABSEN
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="loginGds" class="px-4 py-32 lg:px-36">
+  <div class="container max-w-full">
+    <div class="flex flex-wrap text-center">
+      <% if (typeof errors !='undefined' ) { %>
+      <div class="alert alert-danger fw-bold" role="alert">
+        <%= errors.msg %>
+      </div>
+      <% } %>
+
+      <form
+        action="/login"
+        method="post"
+        class="text-center max-w-lg border border-slate-500 rounded-xl mx-auto px-8 py-6 bg-slate-100 shadow-lg shadow-blue-700 group mb-10 text-black invalid:shadow-pink-700 w-full self-center lg:relative"
+      >
+        <h1 class="text-blue-500 text-4xl font-bold mb-10 lg:text-5xl">
+          Login
+        </h1>
+
+        <div>
+          <label for="Username" class="block font-semibold mb-2 md:text-lg"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="Username"
+            placeholder="Username"
+            name="Username"
+            class="px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-blue-700 placeholder:text-slate-400 mb-8 md:h-12"
+          />
+        </div>
+        <div class="align">
+          <label for="Password" class="block font-semibold mb-2 md:text-lg"
+            >Password</label
+          >
+          <input
+            type="Password"
+            id="Password"
+            placeholder="Password"
+            name="Password"
+            class="px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-blue-700 placeholder:text-slate-400 md:h-12"
+          />
+        </div>
+        <div class="flex gap-2">
+          <span
+            class="bg-blue-500 border rounded-lg uppercase px-5 py-3 text-white font-semibold tracking-wider text-sm mt-5 lg:px-20 w-full hover:bg-blue-600 cursor-pointer"
+            id="kembaliGds"
+            >Back</span
+          >
+          <button
+            name="button"
+            type="submit"
+            class="bg-blue-500 border rounded-lg uppercase px-5 py-3 text-white font-semibold tracking-wider text-sm mt-5 lg:px-20 w-full hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="loginAbsen" class="px-4 py-32 lg:px-36">
+  <div class="container max-w-full">
+    <div class="flex flex-wrap text-center">
+      <form
+        action="/login"
+        method="post"
+        class="text-center max-w-lg border border-slate-500 rounded-xl mx-auto px-8 py-6 bg-slate-100 shadow-lg shadow-blue-700 group mb-10 text-black invalid:shadow-pink-700 w-full self-center lg:relative"
+      >
+        <h1 class="text-blue-500 text-4xl font-bold mb-10 lg:text-5xl">
+          Login
+        </h1>
+
+        <div>
+          <label for="Username" class="block font-semibold mb-2 md:text-lg"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="Username"
+            placeholder="Username"
+            name="Username"
+            class="px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-blue-700 placeholder:text-slate-400 mb-8 md:h-12"
+          />
+        </div>
+        <div class="align">
+          <label for="Password" class="block font-semibold mb-2 md:text-lg"
+            >Password</label
+          >
+          <input
+            type="Password"
+            id="Password"
+            placeholder="Password"
+            name="Password"
+            class="px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-blue-700 placeholder:text-slate-400 md:h-12"
+          />
+        </div>
+        <div class="flex gap-2">
+          <span
+            class="bg-blue-500 border rounded-lg uppercase px-5 py-3 text-white font-semibold tracking-wider text-sm mt-5 lg:px-20 w-full hover:bg-blue-600 cursor-pointer"
+            id="kembaliAbsen"
+            >Back</span
+          >
+          <button
+            name="button"
+            type="submit"
+            class="bg-blue-500 border rounded-lg uppercase px-5 py-3 text-white font-semibold tracking-wider text-sm mt-5 lg:px-20 w-full hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

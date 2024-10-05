@@ -1,0 +1,113 @@
+<section class="p-12 mt-16" id="detailSiswa">
+  <div class="container">
+    <div class="w-full px-4">
+      <div class="mx-auto text-left mb-12">
+        <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:5xl">
+          Detail Siswa
+        </h2>
+      </div>
+    </div>
+
+    <% if (!siswas) { %>
+    <div class="alert alert-danger fw-bold" role="alert">
+      Data Contact tidak ada<br />
+      <a href="/users/Siswas" class="alert-link fw-normal"
+        >&laquo; Kembali ke daftar Contact.</a
+      >
+    </div>
+    <% } else { %>
+    <div>
+      <div class="w-full lg:mx-auto">
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="nisn" class="font-bold text-base text-primary"
+            >nisn</label
+          >
+          <input
+            type="text"
+            id="nisn"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.nisn %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="nis" class="font-bold text-base text-primary">nis</label>
+          <input
+            type="text"
+            id="nis"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.nis %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="name" class="font-bold text-base text-primary"
+            >Nama</label
+          >
+          <input
+            type="text"
+            id="name"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.nama %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="kelas" class="font-bold text-base text-primary"
+            >kelas</label
+          >
+          <input
+            type="text"
+            id="kelas"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.kelas %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="jurusan" class="font-bold text-base text-primary"
+            >jurusan</label
+          >
+          <input
+            type="text"
+            id="jurusan"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.jurusan %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="Poin" class="font-bold text-base text-primary"
+            >Poin</label
+          >
+          <input
+            type="text"
+            id="Poin"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.poin %> "
+          />
+        </div>
+        <div class="w-full px-4">
+          <a
+            href="/users/Siswas/tambahPelanggaran/<%= siswas._id %> "
+            class="text-base font-semibold text-white bg-slate-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+            >Tambah Pelanggaran</a
+          >
+          <a
+            href="/users/Siswas/edit/<%= siswas._id %> "
+            class="text-base font-semibold text-white bg-blue-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+            >Edit</a
+          >
+          <div class="inline-block">
+            <form action="/users/Siswas?_method=DELETE" method="post">
+              <input type="hidden" name="_id" value="<%= siswas._id %>" />
+              <button
+                type="submit"
+                class="text-base font-semibold text-white bg-red-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+                onclick="return confirm('yakin?');"
+              >
+                Delet
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>

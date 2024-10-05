@@ -1,0 +1,150 @@
+<section class="p-12 mt-12" id="editSiswa">
+  <div class="container">
+    <div class="w-full px-4">
+      <div class="mx-auto text-left mb-12">
+        <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:5xl">
+          Edit Siswa
+        </h2>
+      </div>
+    </div>
+
+    <form method="post" action="/users/Siswas?_method=PUT">
+      <input type="hidden" name="_id" value="<%= siswas._id %>" />
+
+      <div class="w-full lg:mx-auto">
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="nisn" class="font-bold text-base text-primary"
+            >nisn</label
+          >
+          <input
+            type="text"
+            id="nisn"
+            name="nisn"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.nisn %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="nisnis" class="font-bold text-base text-primary"
+            >nis</label
+          >
+          <input
+            type="text"
+            id="nis"
+            name="nis"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.nis %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="name" class="font-bold text-base text-primary"
+            >Nama</label
+          >
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.nama %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="kelas" class="font-bold text-base text-primary"
+            >kelas</label
+          >
+          <select
+            id="kelas"
+            name="kelas"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary mt-2"
+          >
+            <option value="<%= siswas.kelas %> " id="hapus">
+              <%= siswas.kelas %>
+            </option>
+            <option value="XII">XII</option>
+            <option value="XI">XI</option>
+            <option value="X">X</option>
+          </select>
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="jurusan" class="font-bold text-base text-primary"
+            >jurusan</label
+          >
+          <select
+            id="jurusan"
+            name="jurusan"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary mt-2"
+          >
+            <option value="<%= siswas.jurusan %> " id="hapus">
+              <%= siswas.jurusan %>
+            </option>
+            <option value="TKJ-1">TKJ-1</option>
+            <option value="TKJ-2">TKJ-2</option>
+            <option value="TKJ-3">TKJ-3</option>
+            <option value="RPL-1">RPL-1</option>
+            <option value="RPL-2">RPL-2</option>
+            <option value="AN-1">AN-1</option>
+            <option value="AN-2">AN-2</option>
+            <option value="MM-1">MM-1</option>
+            <option value="MM-2">MM-2</option>
+            <option value="MM-3">MM-3</option>
+            <option value="AK-1">AK-1</option>
+            <option value="AK-2">AK-2</option>
+            <option value="BR-1">BR-1</option>
+            <option value="MP-1">MP-1</option>
+            <option value="MP-2">MP-2</option>
+            <option value="MP-3">MP-3</option>
+            <option value="MP-4">MP-4</option>
+            <option value="LPS-1">LPS-1</option>
+            <option value="DPB-1">DPB-1</option>
+            <option value="AKL-1">AKL-1</option>
+            <option value="AKL-2">AKL-2</option>
+            <option value="OTKP-1">OTKP-1</option>
+            <option value="OTKP-2">OTKP-2</option>
+            <option value="OTKP-3">OTKP-3</option>
+            <option value="OTKP-4">OTKP-4</option>
+            <option value="OTKP-5">OTKP-5</option>
+            <option value="PBS-1">PBS-1</option>
+            <option value="TB-1">TB-1</option>
+            <option value="BDP-1">BDP-1</option>
+          </select>
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="pelanggaran" class="font-bold text-base text-primary"
+            >pelanggaran</label
+          >
+          <input
+            type="text"
+            id="pelanggaran"
+            name="pelanggaran"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.pelanggaran %> "
+          />
+        </div>
+        <div class="w-full lg:w-1/2 px-4 pb-8">
+          <label for="Poin" class="font-bold text-base text-primary"
+            >Poin</label
+          >
+          <input
+            type="text"
+            id="Poin"
+            name="poin"
+            class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+            value="<%= siswas.poin %> "
+          />
+        </div>
+        <div class="w-full px-4">
+          <button
+            class="text-base font-semibold text-white bg-slate-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+          >
+            Send
+          </button>
+          <a
+            href="/users/Siswas/<%= siswas._id %>"
+            class="text-base font-semibold text-white bg-green-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+            >Back</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

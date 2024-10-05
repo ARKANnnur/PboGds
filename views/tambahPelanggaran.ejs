@@ -1,0 +1,228 @@
+<section class="p-12 mt-16" id="pelanggaran">
+  <div class="container">
+    <div class="w-full px-4">
+      <div class="mx-auto text-left mb-8">
+        <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:5xl">
+          Tambah Pelanggaran
+        </h2>
+      </div>
+    </div>
+
+    <form method="post" action="/users/Siswas/tambahPelanggaran?_method=PUT">
+      <input type="hidden" name="_id" value="<%= siswas._id %>" />
+      <input type="hidden" name="nisn" value="<%= siswas.nisn %>" />
+      <input type="hidden" name="nis" value="<%= siswas.nis %>" />
+
+      <div class="w-full lg:w-1/2 px-4 pb-8">
+        <label for="name" class="font-bold text-base text-primary">Nama</label>
+        <input
+          type="text"
+          id="name"
+          class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+          value="<%= siswas.nama %> "
+          disabled
+        />
+      </div>
+      <div class="w-full lg:w-1/2 px-4 pb-8">
+        <label for="kelas" class="font-bold text-base text-primary"
+          >kelas</label
+        >
+        <input
+          type="text"
+          id="kelas"
+          class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+          value="<%= siswas.kelas %> "
+          disabled
+        />
+      </div>
+      <div class="w-full lg:w-1/2 px-4 pb-8">
+        <label for="jurusan" class="font-bold text-base text-primary"
+          >jurusan</label
+        >
+        <input
+          type="text"
+          id="jurusan"
+          class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+          value="<%= siswas.jurusan %>"
+          disabled
+        />
+      </div>
+
+      <!-- <div class="w-full lg:w-1/2 px-4 pb-8">
+                <label for="pelanggaran" class="font-bold text-base text-primary">Pelanggaran</label>
+                <select id="pelanggaran" name="pelanggaran"
+                    class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary mt-2">
+                    <option value="Almameter">Almameter</option>
+                    <option value="Warepack">Warepack</option>
+                    <option value="Bawahan">Bawahan</option>
+                    <option value="Sepatu">Sepatu</option>
+                    <option value="Kaos kaki">Kaos kaki</option>
+                    <option value="Sabuk">Sabuk</option>
+                    <option value="Kerudung">Kerudung</option>
+                    <option value="Dasi">Dasi</option>
+                    <option value="Bros/Ciput">Bros/Ciput</option>
+                    <option value="Telat">Telat</option>
+                    <option value="Aksesoris">Aksesoris</option>
+                    <option value="Rambut">Rambut</option>
+                    <option value="HP/MakeUP">HP/MakeUP</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div> -->
+
+      <div class="w-full lg:w-1/2 px-4 pb-8">
+        <h3 class="font-bold text-base text-primary">Pelanggaran</h3>
+        <div class="flex flex-row flex-wrap bg-slate-300 rounded-lg p-4">
+          <label for="pelanggaran" class=""
+            >Almameter<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Almameter"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Warepack<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Warepack"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Bawahan<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Bawahan"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Sepatu<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Sepatu"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Kaos kaki<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Kaos kaki"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Sabuk<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Sabuk"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Kerudung<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Kerudung"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Dasi<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Dasi"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Bros/Ciput<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Bros/Ciput"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Telat<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Telat"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Aksesoris<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Aksesoris"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Rambut<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Rambut"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >HP/MakeUP<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="HP/MakeUP"
+              class="mx-2"
+            />
+          </label>
+          <label for="pelanggaran" class=""
+            >Lainnya<input
+              type="checkbox"
+              name="pelanggaran"
+              id="pelanggaran"
+              value="Lainnya"
+              class="mx-2"
+            />
+          </label>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-1/2 px-4 pb-8">
+        <label for="Poin" class="font-bold text-base text-primary">Poin</label>
+        <input
+          type="text"
+          id="poin"
+          name="poin"
+          class="w-full bg-slate-200 text-dark p-3 rounded-md outline-none focus:ring-1 focus:border-primary"
+        />
+      </div>
+
+      <div class="w-full px-4">
+        <button
+          class="text-base font-semibold text-white bg-slate-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+        >
+          Send
+        </button>
+        <a
+          href="/users/Siswas/<%= siswas._id %>"
+          class="text-base font-semibold text-white bg-green-500 py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
+          >Back</a
+        >
+      </div>
+    </form>
+  </div>
+</section>

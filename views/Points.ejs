@@ -1,0 +1,89 @@
+<section class="pt-12 px-12 mt-12">
+  <div class="text-center text-lg pb-12 font-semibold tracking-wide">
+    List pelanggaran siswa SMK Amaliyah
+  </div>
+
+  <div class="flex flex-row-reverse mb-3">
+    <div class="inline-block">
+      <form action="/users/Points?_method=PUT" method="post">
+        <button
+          type="submit"
+          class="text-sm sm:text-base font-semibold text-white bg-red-500 py-2 px-4 rounded-lg hover:opacity-80 hover:shadow-lg transition duration-500"
+          onclick="return confirm('yakin?');"
+        >
+          Delete
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="overflow-auto rounded-lg shadow">
+    <table
+      class="w-full table table-striped table-bordered data"
+      id="table-datatables"
+    >
+      <thead class="bg-gray-50 border-b-2 border-gray-200">
+        <tr>
+          <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">
+            No.
+          </th>
+          <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">
+            Nama
+          </th>
+          <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">
+            Kelas
+          </th>
+          <th class="p-3 text-sm font-semibold tracking-wide text-center">
+            Pelanggaran
+          </th>
+          <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">
+            Poin
+          </th>
+          <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">
+            Action
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="divide-y divide-gray-100">
+        <% siswas.forEach((siswa,i)=> { %>
+        <tr class="bg-white">
+          <form action="/users/Points/<%= siswa._id %>" method="post">
+            <td class="p-3 text-sm font-bold text-blue-500 whitespace-nowrap">
+              <%= ++i %>
+            </td>
+            <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+              <%= siswa.nama %>
+            </td>
+            <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+              <span
+                class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"
+              >
+                <%= siswa.kelas %> <%= siswa.jurusan %>
+              </span>
+            </td>
+            <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+              <ul>
+                <li><%= siswa.pelanggaran %></li>
+              </ul>
+            </td>
+            <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+              <%= siswa.poin %>
+            </td>
+            <td>
+              <button
+                type="submit"
+                class="text-sm font-semibold text-white bg-red-500 p-2 rounded-lg hover:opacity-80 hover:shadow-lg transition duration-500"
+                onclick="return confirm('yakin?');"
+              >
+                Delete
+              </button>
+            </td>
+          </form>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
